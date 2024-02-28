@@ -2,22 +2,32 @@
 import "bootstrap";
 import "./style.css";
 
-window.onload = function() {
-  //write your code here
-  //primera frase
-  console.log();
-
+//write your code here
+//primera frase
+function generadorExcusas ()= {
   let quien = ["Mi gato", "Mi sobrino", "Una cigüeña", "El perro del vecino"];
   let accion = [
     "lanzó pintura sobre",
     "derramó gasolina y una cerilla encendida en",
     "se comió",
-    "rompió"
+    "rompió",
   ];
   let que = ["mi portatil", "mi coche", "mis llaves"];
   let cuando = [
     "hace una hora",
-    "mientras me vestía para salir",
-    "cuando me at"
+    "mientras me vestía para salir.",
+    "cuando me ataba los cordones.",
+    "mientras tendía la ropa.",
   ];
-};
+
+  let quienId = Math.floor(Math.random() * quien.length);
+  let accionId = Math.floor(Math.random() * accion.length);
+  let queID = Math.floor(Math.random() * que.length);
+  let cuandoId = Math.floor(Math.random() * cuando.length);
+
+  return quien[quienId] + " " + accion[accionId] + " " + que[queID] + " " + cuando[cuandoId];
+}
+function 
+window.onload = function (generadorExcusas) {
+  document.getElementById(excusa).innerHTML = generadorExcusas();
+}
