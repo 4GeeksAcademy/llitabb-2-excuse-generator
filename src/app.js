@@ -26,8 +26,8 @@ function generadorExcusas ()= {
   let cuandoId = Math.floor(Math.random() * cuando.length);
 
   return quien[quienId] + " " + accion[accionId] + " " + que[queID] + " " + cuando[cuandoId];
-}
-function 
-window.onload = function (generadorExcusas) {
+};
+
+window.onload = function () 
   document.getElementById(excusa).innerHTML = generadorExcusas();
-}
+
