@@ -34,7 +34,7 @@ function generadorExcusas() {
   let cuandoId = numeroRandom(cuando);
 
   // Composición de retorno para la excusa generada concatenando los valores generados aleatoriamente
-  return (
+  /* PRIMER RETURN QUE FUNCIONA:  return (
     quien[quienId] +
     " " +
     accion[accionId] +
@@ -43,6 +43,10 @@ function generadorExcusas() {
     " " +
     cuando[cuandoId]
   );
+}*/
+
+  //SEGUNDO RETURN QUE FUNCIONA (más claro y limpio)
+  return `${quien[quienId]} ${accion[accionId]} ${que[queID]} ${cuando[cuandoId]}`;
 }
 
 // Se ejecutará cuando se carga la ventana
@@ -51,9 +55,15 @@ window.onload = function() {
   // Se asigna el resultado de la función generadorExcusas al elemento con id "excusa" en el HTML
   document.getElementById("excusa").innerHTML = generadorExcusas();
   //Se asigna llamada al HTML de botón refrescar
-  document
+  /* PRIMERA OPCIÓN (de esta forma se recarga toda la página):
+   document
     .getElementById("botonRefrescar")
     .addEventListener("click", function() {
       location.reload();
     });
+*/
+  // SEGUNDA OPCIÓN (de esta forma no se recarga toda la página):
+  document.getElementById("botonRefrescar").addEventListener("click", () => {
+    document.getElementById("excusa").innerHTML = generadorExcusas();
+  });
 };
